@@ -1,4 +1,86 @@
+/* Params
+========================================================================== */
+
+$number-feature: 3;
+$height-content-top: 184px;
+
+$image-bg-top: "/img/top_bg.jpg";
+$color-bg-top: #616161;
+$color-text-top: $color-base;
+
+$color-bg-item-feature: $color-main;
+$size-item-feature: 128px;
+
+/* Content css
+========================================================================== */
+
 article {
-	margin-top: $spacing;
-	margin-bottom: $spacing-large;
+	padding-top: $spacing-large;
+}
+
+.text-center {
+	text-align: center;
+}
+
+/* sample top */
+
+#top {
+	height: 100vh;
+	position: relative;
+	padding-top: 0;
+
+	background-color: $color-bg-top;
+	background: url($image-bg-top) no-repeat center/cover;
+
+	> div {
+		width: 100%;
+		height: $height-content-top;
+		position: absolute;
+		top: 50%;
+		margin-top: -$height-content-top / 4;
+
+		> h1 {
+			color: $color-text-top;
+		}
+
+		> p {
+			color: $color-text-top;
+		}
+	}
+}
+
+.content-top {
+	width:100%;
+	min-width: $width-small;
+	padding: $spacing;
+}
+
+/* sample feature */
+
+.features {
+	@include clearfix();
+	margin-bottom: 0;
+
+	> li {
+		text-align: center;
+		@include column(12 / $number-feature); 
+
+  		@media #{$small} { 
+    		@include column(12);
+    		margin-top: $spacing-large;
+
+    		&:first-child{
+				margin-top: 0;    		
+    		}
+  		}
+
+  		> figure {
+  			width: $size-item-feature;
+  			height: $size-item-feature;
+  			background: $color-bg-item-feature;
+  			margin: 0 auto;
+  			border-radius: 50%;
+  			margin-bottom: $spacing;
+  		}
+  	}
 }

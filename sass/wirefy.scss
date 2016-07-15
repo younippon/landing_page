@@ -41,16 +41,24 @@ $color-link-hover: #616161;
 $width-large: 960px;
 $width-middle: 640px;
 $width-small: 320px;
-$spacing-large: $spacing * 5;
+$spacing-large: $spacing * 4;
+
+$size-text-menu: 0.8em;
 
 $small:  "only screen and (max-width:" + $width-middle + ")";
 $middle: "only screen and (min-width:" + ($width-middle + 1) + ") and (" + $width-large + ")";
 $large:  "only screen and (min-width:" + ($width-large + 1) + ")";
 
+/* Numbers
+========================================================================== */
+
+$number-menu-item: 4;
+
 /* Element difinitions
 ========================================================================== */
 
 html, body {
+	width: 100%;
 	background: $color-base;
 }
 
@@ -59,14 +67,16 @@ h1,h2,h3,h4,p,li,th,td {
 }
 
 a {
+	color: $color-link;
 	&:link,&:visited { color: $color-link; }
 	&:hover { color: $color-link-hover; }
 }
 
 .content-wrapper {
 	max-width: $width-large;
+	min-width: $width-small;
 	margin: 0 auto;
-	padding: 0 $spacing;
+	padding: $spacing;
 }
 
 /* navigation */
@@ -83,13 +93,30 @@ nav {
 		margin-bottom: 0;
 
 		> li {
+			padding-top: 2px;
 			text-align: center;
-			@include column(4); 
+			@include column(12 / $number-menu-item); 
   			@media #{$small} { 
-    			@include column(12); 
+    			@include column(12);
+  			}
+
+  			> a {
+  				font-size: $size-text-menu;
+  				text-decoration: none;
+  				&:link,&:visited { text-decoration: none; }
+  				&:hover { text-decoration: none; }
   			}
   		}
   	}
+
+  	@media #{$small} { 
+  		width: 100%;
+  	}
+}
+
+figure > a {
+	display: inline-block;
+	line-height: 1;
 }
 
 /* Components

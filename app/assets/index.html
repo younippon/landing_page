@@ -41,27 +41,87 @@ MIT License
   <header>
     <div class="content-wrapper">
 
-      <img scr="/img/logo.png" alt="logo">
+      <figure>
+        <a href="#"><img src="/img/logo.png" alt="logo" class="logo"></a>
+      </figure>
 
       <div class="menu">
         <ul>
-          <li><a class="menu-active" href="/">Home</a></li>
-          <li><a href="/service.html">Service</a></li>
-          <li><a href="https://blog.spot-corp.com/" >Contact</a></li>
+          <li><a href="#">Top</a></li>
+          <li><a href="#intro">Intro</a></li>
+          <li><a href="#feature">Feature</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
 
     </div>
   </header>
 
-  <article>
-    <div class="content-wrapper">
+  <article id="top">
+    <div class="text-center">
 
-      <h2>Topic</h2>
+      <h1>Title</h1>
+
+      <p>Subtitle</p>
+
+    </div>
+  </article>
+
+  <article id="intro">
+    <div class="content-wrapper text-center">
+
+      <h2>Introduction</h2>
+
+      <p>Description.</p>
+
+    </div>
+  </article>
+  
+  <article id="feature">
+    <div class="content-wrapper text-center">
+
+      <h2>Feature</h2>
+
+      <ul class="features">
+
+        <li>
+          <figure>
+            <img src="/img/feature1.png">
+          </figure>
+          <h3>Fast</h3>
+          <p>Description.</p>
+        </li>
+
+        <li>
+          <figure>
+            <img src="/img/feature2.png">
+          </figure>
+          <h3>Inexpensive</h3>
+          <p>Description.</p>
+        </li>
+
+        <li>
+          <figure>
+            <img src="/img/feature3.png">
+          </figure>
+          <h3>Yummy</h3>
+          <p>Description.</p>
+        </li>
+
+      </ul>
+
+    </div>
+  </article>
+  
+  <article id="contact">
+    <div class="content-wrapper text-center">
+
+      <h2>Contact</h2>
 
       <p>Description</p>
 
     </div>
+
   </article>
 	
   <footer>
@@ -69,9 +129,10 @@ MIT License
 
       <div class="menu">
         <ul>
-          <li><a class="menu-active" href="/">Home</a></li>
-          <li><a href="/service.html">Service</a></li>
-          <li><a href="https://blog.spot-corp.com/" >Contact</a></li>
+          <li><a href="#">Top</a></li>
+          <li><a href="#intro">Intro</a></li>
+          <li><a href="#feature">Feature</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
 
@@ -81,8 +142,7 @@ MIT License
   </footer>
 
   <!-- <script src="/jquery-1.11.3.min.js"></script> -->
-  <script src="/wirefy.js"></script>
-
+  <!-- <script src="/script.js"></script> -->
   <!-- TODO: set up google analytics -->
 
 </body>

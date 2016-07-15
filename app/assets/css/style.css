@@ -569,7 +569,7 @@ address {
   line-height: 1.5; }
 
 small {
-  font-size: 0.625em; }
+  font-size: 0.75em; }
 
 blockquote:before, blockquote:after {
   content: '';
@@ -663,23 +663,29 @@ del {
 ========================================================================== */
 /* Size difinitions
 ========================================================================== */
+/* Numbers
+========================================================================== */
 /* Element difinitions
 ========================================================================== */
 html, body {
+  width: 100%;
   background: #fafafa; }
 
 h1, h2, h3, h4, p, li, th, td {
   color: #212121; }
 
-a:link, a:visited {
+a {
   color: #424242; }
-a:hover {
-  color: #616161; }
+  a:link, a:visited {
+    color: #424242; }
+  a:hover {
+    color: #616161; }
 
 .content-wrapper {
   max-width: 960px;
+  min-width: 320px;
   margin: 0 auto;
-  padding: 0 16px; }
+  padding: 16px; }
 
 /* navigation */
 nav {
@@ -697,10 +703,11 @@ nav {
     .menu > ul:after {
       clear: both; }
     .menu > ul > li {
+      padding-top: 2px;
       text-align: center;
       display: inline;
       float: left;
-      width: 31.25%;
+      width: 22.91667%;
       margin: 0 1.04167%; }
       @media only screen and (max-width: 640px) {
         .menu > ul > li {
@@ -708,13 +715,33 @@ nav {
           float: left;
           width: 97.91667%;
           margin: 0 1.04167%; } }
+      .menu > ul > li > a {
+        font-size: 0.8em;
+        text-decoration: none; }
+        .menu > ul > li > a:link, .menu > ul > li > a:visited {
+          text-decoration: none; }
+        .menu > ul > li > a:hover {
+          text-decoration: none; }
+  @media only screen and (max-width: 640px) {
+    .menu {
+      width: 100%; } }
+
+figure > a {
+  display: inline-block;
+  line-height: 1; }
 
 /* Components
 ========================================================================== */
+/* Params
+========================================================================== */
+/* Content css
+========================================================================== */
 header {
+  width: 100%;
   background: #424242;
   color: #ffffff;
-  padding: 16px 0; }
+  position: fixed;
+  z-index: 2; }
   header > div {
     *zoom: 1; }
   header > div:before, header > div:after {
@@ -722,20 +749,101 @@ header {
     display: table; }
   header > div:after {
     clear: both; }
-  header > div > img {
+  header > div > figure {
     display: inline-block;
-    float: left; }
+    float: left;
+    margin-bottom: 0; }
+    @media only screen and (max-width: 640px) {
+      header > div > figure {
+        float: none; } }
   header > div > div {
     display: inline-block;
     float: right; }
+    @media only screen and (max-width: 640px) {
+      header > div > div {
+        display: block;
+        float: none; } }
 
+.logo {
+  width: 148px; }
+
+header a:link, header a:visited {
+  color: #fafafa; }
+header a:hover {
+  color: #ffffff; }
+
+/* Params
+========================================================================== */
+/* Content css
+========================================================================== */
 article {
-  margin-top: 16px;
-  margin-bottom: 80px; }
+  padding-top: 64px; }
 
-footer > div > div {
-  margin: 0 auto; }
-footer > div > p {
+.text-center {
   text-align: center; }
+
+/* sample top */
+#top {
+  height: 100vh;
+  position: relative;
+  padding-top: 0;
+  background-color: #616161;
+  background: url("/img/top_bg.jpg") no-repeat center/cover; }
+  #top > div {
+    width: 100%;
+    height: 184px;
+    position: absolute;
+    top: 50%;
+    margin-top: -46px; }
+    #top > div > h1 {
+      color: #fafafa; }
+    #top > div > p {
+      color: #fafafa; }
+
+.content-top {
+  width: 100%;
+  min-width: 320px;
+  padding: 16px; }
+
+/* sample feature */
+.features {
+  margin-bottom: 0; }
+  .features {
+    *zoom: 1; }
+  .features:before, .features:after {
+    content: "";
+    display: table; }
+  .features:after {
+    clear: both; }
+  .features > li {
+    text-align: center;
+    display: inline;
+    float: left;
+    width: 31.25%;
+    margin: 0 1.04167%; }
+    @media only screen and (max-width: 640px) {
+      .features > li {
+        display: inline;
+        float: left;
+        width: 97.91667%;
+        margin: 0 1.04167%;
+        margin-top: 64px; }
+        .features > li:first-child {
+          margin-top: 0; } }
+    .features > li > figure {
+      width: 128px;
+      height: 128px;
+      background: #424242;
+      margin: 0 auto;
+      border-radius: 50%;
+      margin-bottom: 16px; }
+
+footer {
+  margin-top: 64px; }
+  footer div > div {
+    margin: 0 auto; }
+  footer div > p {
+    text-align: center;
+    margin-top: 32px; }
 
 /*# sourceMappingURL=style.css.map */

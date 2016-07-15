@@ -1,19 +1,50 @@
+/* Params
+========================================================================== */
+
+$color-bg-header: $color-main;
+$color-text-header: $color-base;
+$color-text-header-hover: #ffffff;
+
+/* Content css
+========================================================================== */
+
 header {
-	background: $color-main;
+	width: 100%;
+	background: $color-bg-header;
 	color: $color-accent;
-	padding: $spacing 0;
+	position: fixed;
+	z-index: 2;
 
 	> div {
 		@include clearfix();
 
-		> img {
+		> figure {
 			display: inline-block;
 			float: left;
+			margin-bottom: 0;
+
+			@media #{$small} { 
+				float: none;
+			}
 		}
 
 		> div {
 			display: inline-block;
 			float: right;
+
+			@media #{$small} {
+				display: block;
+				float: none;
+			}
 		}
 	}
+}
+
+.logo {
+	width: 148px;
+}
+
+header a {
+	&:link,&:visited { color: $color-text-header; }
+	&:hover { color: $color-text-header-hover; }
 }
