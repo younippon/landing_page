@@ -1,0 +1,29 @@
+/* ============================================================
+
+Wirefy by Chris Da Sie
+Version: 3.0.5
+URL: https://github.com/cjdsie/wirefy
+Text Domain: Wirefy
+MIT License
+
+/* VENDOR - Default fall backs & external .scss files. 
+========================================================================== */
+
+@import 'vendor/_normalize.scss';
+
+/* Base - Base variable file along with starting points mixins & placeholders. ========================================================================== */
+
+@import 'base/_variables.scss';
+@import 'base/_mixins.scss';
+@import 'base/_base.scss';
+
+
+/* FRAMEWORK - Structure & layout files including the grid function. 
+========================================================================== */
+
+@import 'framework/_grid.scss';
+@import 'framework/_typography.scss';
+
+@import 'theme/_header.scss';
+@import 'theme/_main.scss';
+@import 'theme/_footer.scss';
