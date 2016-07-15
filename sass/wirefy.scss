@@ -24,6 +24,77 @@ MIT License
 @import 'framework/_grid.scss';
 @import 'framework/_typography.scss';
 
+/* Color difinitions
+========================================================================== */
+
+$color-base: #fafafa;
+$color-main: #424242;
+$color-accent: #ffffff;
+
+$color-text: #212121;
+$color-link: $color-main;
+$color-link-hover: #616161;
+
+/* Size difinitions
+========================================================================== */
+
+$width-large: 960px;
+$width-middle: 640px;
+$width-small: 320px;
+$spacing-large: $spacing * 5;
+
+$small:  "only screen and (max-width:" + $width-middle + ")";
+$middle: "only screen and (min-width:" + ($width-middle + 1) + ") and (" + $width-large + ")";
+$large:  "only screen and (min-width:" + ($width-large + 1) + ")";
+
+/* Element difinitions
+========================================================================== */
+
+html, body {
+	background: $color-base;
+}
+
+h1,h2,h3,h4,p,li,th,td {
+	color: $color-text;
+}
+
+a {
+	&:link,&:visited { color: $color-link; }
+	&:hover { color: $color-link-hover; }
+}
+
+.content-wrapper {
+	max-width: $width-large;
+	margin: 0 auto;
+	padding: 0 $spacing;
+}
+
+/* navigation */
+
+nav {
+	display: block;
+}
+
+.menu {
+	width: 320px;
+
+	> ul {
+		@include clearfix();
+		margin-bottom: 0;
+
+		> li {
+			text-align: center;
+			@include column(4); 
+  			@media #{$small} { 
+    			@include column(12); 
+  			}
+  		}
+  	}
+}
+
+/* Components
+========================================================================== */
+
 @import 'theme/_header.scss';
 @import 'theme/_main.scss';
 @import 'theme/_footer.scss';

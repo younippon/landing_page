@@ -3,6 +3,13 @@
 **** Version: 0.0.2 ******
 *************************/
 
+//css3
+
+@mixin css3($property, $value) {
+     @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
+          #{$prefix}#{$property}: $value;
+     }
+}
 
 // Box sizing
 

@@ -1,6 +1,19 @@
-/************************
-******   Header    *******
-**** Version: 0.0.1 *****
-*************************/
+header {
+	background: $color-main;
+	color: $color-accent;
+	padding: $spacing 0;
 
-/* A collection of styles containing the header information */
+	> div {
+		@include clearfix();
+
+		> img {
+			display: inline-block;
+			float: left;
+		}
+
+		> div {
+			display: inline-block;
+			float: right;
+		}
+	}
+}
